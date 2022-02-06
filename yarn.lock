@@ -5093,6 +5093,13 @@ registry-url@^5.0.0, registry-url@^5.1.0:
   dependencies:
     rc "^1.2.8"
 
+registry-url@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/registry-url/-/registry-url-6.0.0.tgz#fa74e05576071a4613416c15ea13afe443ec176c"
+  integrity sha512-3dTUe7E2Uj4xiQf5OhNeF2vnqbtzX1s0xYfU0mDMzkwgvaTUGOWLw7ieXu20ht9w+dURqr5Yg8PRAON9ppGmvA==
+  dependencies:
+    rc "^1.2.8"
+
 release-zalgo@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/release-zalgo/-/release-zalgo-1.0.0.tgz#09700b7e5074329739330e535c5a90fb67851730"
