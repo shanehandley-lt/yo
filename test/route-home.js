@@ -18,8 +18,6 @@ describe('home route', () => {
     this.router.registerRoute('help', this.helpRoute);
     this.installRoute = sinon.stub().returns(Promise.resolve());
     this.router.registerRoute('install', this.installRoute);
-    this.updateRoute = sinon.stub().returns(Promise.resolve());
-    this.router.registerRoute('update', this.updateRoute);
   });
 
   afterEach(function () {
@@ -40,40 +38,11 @@ describe('home route', () => {
     });
   });
 
-  it('does not display update options if no generators is installed', function () {
-    this.router.generator = [];
-    this.sandbox.stub(inquirer, 'prompt').callsFake(prompts => {
-      assert.strictEqual(_.map(prompts[0].choices, 'value').includes('update'), false);
-      return Promise.resolve({whatNext: 'exit'});
-    });
-
-    return this.router.navigate('home');
-  });
-
-  it('show update menu option if there is installed generators', function () {
-    this.router.generators = [{
-      namespace: 'unicorn:app',
-      appGenerator: true,
-      prettyName: 'unicorn',
-      updateAvailable: false
-    }];
-
-    this.sandbox.stub(inquirer, 'prompt').callsFake(prompts => {
-      assert(_.map(prompts[0].choices, 'value').includes('update'));
-      return Promise.resolve({whatNext: 'update'});
-    });
-
-    return this.router.navigate('home').then(() => {
-      sinon.assert.calledOnce(this.updateRoute);
-    });
-  });
-
   it('list runnable generators', function () {
     this.router.generators = [{
       namespace: 'unicorn:app',
       appGenerator: true,
       prettyName: 'unicorn',
-      updateAvailable: false
     }];
 
     this.sandbox.stub(inquirer, 'prompt').callsFake(prompts => {
@@ -89,21 +58,5 @@ describe('home route', () => {
     return this.router.navigate('home').then(() => {
       sinon.assert.calledWith(this.runRoute, this.router, 'unicorn:app');
     });
-  });
-
-  it('show update available message behind generator name', function () {
-    this.router.generators = [{
-      namespace: 'unicorn:app',
-      appGenerator: true,
-      prettyName: 'unicorn',
-      updateAvailable: true
-    }];
-
-    this.sandbox.stub(inquirer, 'prompt').callsFake(prompts => {
-      assert(prompts[0].choices[1].name.includes('♥ Update Available!'));
-      return Promise.resolve({whatNext: 'exit'});
-    });
-
-    return this.router.navigate('home');
   });
 });

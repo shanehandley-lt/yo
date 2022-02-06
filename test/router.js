@@ -56,43 +56,4 @@ describe('Router', () => {
       assert.throws(this.router.navigate.bind(this.route, 'invalid route name'));
     });
   });
-
-  describe('#updateAvailableGenerators()', () => {
-    beforeEach(function () {
-      this.env.getGeneratorsMeta.returns({
-        'xanadu:all': {
-          namespace: 'xanadu:all',
-          resolved: path.join('xanadu', 'all', 'index.js')
-        },
-        'phoenix:app': {
-          namespace: 'phoenix:app',
-          resolved: path.join('phoenix', 'app', 'index.js')
-        },
-        'phoenix:misc': {
-          namespace: 'phoenix:misc',
-          resolved: path.join('phoenix', 'misc', 'index.js')
-        },
-        'phoenix:sub-app': {
-          namespace: 'phoenix:sub-app',
-          resolved: path.join('phoenix', 'sub-app', 'index.js')
-        }
-      });
-    });
-
-    it('finds generators where an `all` generator is implemented', function () {
-      this.router.updateAvailableGenerators();
-      assert.ok(this.router.generators['xanadu-all'], 'xanadu:all found');
-    });
-
-    it('finds generators where an `app` generator is implemented', function () {
-      this.router.updateAvailableGenerators();
-      assert.ok(this.router.generators['phoenix-app'], 'phoenix:app found');
-    });
-
-    it('ignores sub-generators', function () {
-      this.router.updateAvailableGenerators();
-      assert.ok(!this.router.generators['phoenix-misc'], 'phoenix:misc ignored');
-      assert.ok(!this.router.generators['phoenix-sub-app'], 'phoenix:sub-app ignored');
-    });
-  });
 });
