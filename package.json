@@ -14,8 +14,6 @@
     "node": ">=12.10.0"
   },
   "scripts": {
-    "postinstall": "yodoctor",
-    "postupdate": "yodoctor",
     "pretest": "xo",
     "test": "nyc mocha --timeout=10000",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
@@ -65,7 +63,6 @@
     "titleize": "^2.1.0",
     "update-notifier": "^5.1.0",
     "user-home": "^2.0.0",
-    "yeoman-doctor": "^5.0.0",
     "yeoman-environment": "^3.5.1"
   },
   "devDependencies": {
