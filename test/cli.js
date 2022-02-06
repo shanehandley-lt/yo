@@ -52,8 +52,7 @@ describe('bin', () => {
   it('should return the version', cb => {
     const cp = execFile('node', [
       path.resolve(__dirname, '..', pkg.bin.yo),
-      '--version',
-      '--no-insight'
+      '--version'
     ]);
     const expected = pkg.version;
 
@@ -64,7 +63,7 @@ describe('bin', () => {
   });
 
   it('should output available generators when `--generators` flag is supplied', cb => {
-    const cp = execFile('node', [path.resolve(__dirname, '..', pkg.bin.yo), '--generators', '--no-insight']);
+    const cp = execFile('node', [path.resolve(__dirname, '..', pkg.bin.yo), '--generators']);
 
     cp.stdout.once('data', data => {
       assert(data.length > 0);
@@ -77,8 +76,7 @@ describe('bin', () => {
     const cp = execFile('node', [
       path.resolve(__dirname, '..', pkg.bin.yo),
       '--generators',
-      '--local-only',
-      '--no-insight'
+      '--local-only'
     ]);
 
     cp.stdout.once('data', data => {
