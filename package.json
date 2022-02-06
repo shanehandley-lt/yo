@@ -61,7 +61,6 @@
     "read-pkg-up": "^7.0.1",
     "sort-on": "^4.1.1",
     "titleize": "^2.1.0",
-    "update-notifier": "^5.1.0",
     "user-home": "^2.0.0",
     "yeoman-environment": "^3.5.1"
   },
