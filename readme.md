@@ -1,3 +1,9 @@
+# yo-slim
+
+This is a fork of `yo` which omits certain functionality and dependencies which are problematic or unused in a CI environment.
+
+---
+
 # yo [![npm](https://badge.fury.io/js/yo.svg)](http://badge.fury.io/js/yo) [![Build Status](https://travis-ci.org/yeoman/yo.svg?branch=master)](https://travis-ci.org/yeoman/yo) [![Coverage Status](https://coveralls.io/repos/yeoman/yo/badge.svg)](https://coveralls.io/r/yeoman/yo) [![](https://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_Yeoman_chat_%E2%86%92-00d06f.svg)](https://gitter.im/yeoman/yeoman) [![OpenCollective](https://opencollective.com/yeoman/backers/badge.svg)](https://opencollective.com/yeoman#support)
 
 [![](https://raw.githubusercontent.com/yeoman/media/master/optimized/yeoman-masthead.png)](http://yeoman.io)

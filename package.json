@@ -71,7 +71,7 @@
     "proxyquire": "^2.0.1",
     "registry-url": "^5.1.0",
     "sinon": "^12.0.1",
-    "xo": "0.38.0"
+    "xo": "0.47.0"
   },
   "resolutions": {
     "natives": "1.1.3"
