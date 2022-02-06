@@ -1,10 +1,10 @@
 {
-  "name": "yo",
+  "name": "yo-slim",
   "version": "4.3.0",
-  "description": "CLI tool for running Yeoman generators",
+  "description": "Slimmed-down CLI tool for running Yeoman generators in CI pipelines",
   "license": "BSD-2-Clause",
-  "repository": "yeoman/yo",
-  "homepage": "http://yeoman.io",
+  "repository": "shanehandley-lt/yo-slim",
+  "homepage": "https://github.com/shanehandley-lt/yo-slim",
   "author": "Yeoman",
   "main": "lib",
   "bin": {
