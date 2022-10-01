@@ -54,7 +54,7 @@
     "npm-keyword": "^6.1.0",
     "open": "^8.4.0",
     "package-json": "^7.0.0",
-    "sort-on": "^4.1.1",
+    "sort-on": "^5.2.0",
     "yeoman-environment": "^3.5.1"
   },
   "devDependencies": {
